@@ -25,7 +25,7 @@ class Loss:
          data_loss = np.mean(sample_loss)
          return data_loss
     
-class Loss_CategoticalCrossentropy(Loss):
+class Loss_CategoricalCrossentropy(Loss):
     def forward(self, y_pred, y_true):
         sample = len(y_pred)
         y_pred_clipped = np.clip(y_pred, 1e-7, 1 - 1e-7)
@@ -38,3 +38,15 @@ class Loss_CategoticalCrossentropy(Loss):
 
         negative_log_likelihoods = -np.log(correct_confidences)
         return negative_log_likelihoods
+
+# Combination of softmax activation and loss categorical crossentropy for LAST LAYER
+class Activation_Softmax_Loss_CategoricalCrossentropy:
+    def __init__(self):
+        self.activation = Activation_Softmax()
+        self.loss = Loss_CategoricalCrossentropy()
+
+    #Forward pass
+    def forward(self, input, y_true):
+        self.activation.forward(input)
+        self.output = self.activation.output
+        return self.loss.calculate(self.output, y_true)
