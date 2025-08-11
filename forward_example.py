@@ -1,5 +1,5 @@
 import numpy as np
-from neural_networks import DenseLayer, Activation_ReLU, Activation_Softmax, Loss_CategoticalCrossentropy
+from neural_networks import DenseLayer, Activation_ReLU, Activation_Softmax, Loss_CategoricalCrossentropy
 
 np.random.seed(0)
 
@@ -30,7 +30,7 @@ print(dense2.output)
 activation2.forward(dense2.output)
 
 # Loss calculation
-loss_function = Loss_CategoticalCrossentropy()
+loss_function = Loss_CategoricalCrossentropy()
 loss = loss_function.calculate(activation2.output, y)
 
 # Output everything
