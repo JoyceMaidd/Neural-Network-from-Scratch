@@ -6,7 +6,7 @@ Implementation of a neural network in **Python** and **NumPy**
 - Dense layers with **ReLU** & **Softmax**
 - **Categorical Cross-Entropy** loss
 - Manual backpropagation & gradient descent
-- Study notes included
+- [Study notes](https://github.com/JoyceMaidd/Neural-Network-from-Scratch/blob/main/Building_Neural_Networks_from_Scratch.pdf) included 
 
 **Run:**
 ```bash
