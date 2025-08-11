@@ -1,5 +1,5 @@
 import numpy as np
-from forward import DenseLayer, Activation_ReLU, Activation_Softmax, Loss_CategoticalCrossentropy
+from neural_networks import DenseLayer, Activation_ReLU, Activation_Softmax, Loss_CategoticalCrossentropy
 
 np.random.seed(0)
 
